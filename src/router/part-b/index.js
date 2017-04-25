@@ -1,4 +1,4 @@
-module.exports = [{
+const B = [{
   path: '/others',
   component: resolve => System.import('@/components/page/Others'),
   meta: {
@@ -17,3 +17,5 @@ module.exports = [{
     component: resolve => System.import('@/components/page/Second')
   }]
 }]
+
+export default B

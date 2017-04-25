@@ -17,7 +17,6 @@ Vue.use(Router)
  */
 var AllRoutes = {}
 AllRoutes.routes = [{
-  // 首页
   path: '/',
   component: resolve => System.import('@/components/page/Home')
 }]
@@ -30,6 +29,7 @@ AllRoutes.concatRoutes(B)
 
 // 路由
 const router = new Router({
+  linkActiveClass: 'active',
   routes: AllRoutes.routes
 })
 
