@@ -10,6 +10,7 @@
   npm i axios --save
   npm i moment --save
   npm i store --save
+  npm i babel-polyfill --save-dev
   ```
   
 - 直接引入
