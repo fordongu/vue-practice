@@ -119,7 +119,7 @@
   
 ## Router 设置链接激活时使用的 CSS 类名
 
-Router 默认值可以通过路由的构造选项 linkActiveClass 来全局配置，此处设置为 HTML 默认值：
+默认值可以通过路由的构造选项 linkActiveClass 来全局配置，此处设置为 HTML 默认值：
 
 ```
 const router = new Router({
