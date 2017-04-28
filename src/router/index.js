@@ -18,7 +18,7 @@ Vue.use(Router)
 var AllRoutes = {}
 AllRoutes.routes = [{
   path: '/',
-  component: resolve => System.import('@/components/page/Home')
+  redirect: '/home'
 }]
 AllRoutes.concatRoutes = function (routes) {
   AllRoutes.routes = AllRoutes.routes.concat(routes)
@@ -43,7 +43,6 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     // 查看登陆状态
     var isLogin = store.state.isLogin
-    console.log('isLogin=' + isLogin)
     if (!isLogin) {
       next({
         path: '/login',

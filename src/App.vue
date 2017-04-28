@@ -1,33 +1,21 @@
 <template>
   <div id="app">
-    <router-link to="/home">首页</router-link>
-    <router-link to="/login" v-if="!isLogin">请登录</router-link>
-    <a @click="exit" v-else>退出</a>
-    <router-link to="/others">其他</router-link>
-    <p>-------------------------------------------------------------------------</p>
+    <top-nav></top-nav>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+  import TopNav from './components/common/top-nav/TopNav.vue'
   export default {
     name: 'app',
+    components: {
+      TopNav
+    },
     created: function () {
       this.libraryTest()
     },
-    computed: {
-      isLogin () {
-        // 动态获取登录状态
-        return this.$store.state.isLogin
-      }
-    },
     methods: {
-      exit: function () {
-        this.$store.commit('exit')
-        this.$router.push({
-          path: '/login'
-        })
-      },
       libraryTest: function () {
         console.log(this.$time ? 'Moment works!' : 'Uh oh..')
         console.log(this.$http ? 'Axios works!' : 'Uh oh..')
@@ -38,13 +26,12 @@
   }
 </script>
 
-<style>
+<style lang="stylus" scoped>
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+    height: 100vh;
+    background-color: #E8F1F5;
   }
 </style>

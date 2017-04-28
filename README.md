@@ -10,7 +10,6 @@
   npm i axios --save
   npm i moment --save
   npm i store --save
-  npm i babel-polyfill --save-dev
   ```
   
 - 直接引入
@@ -128,5 +127,39 @@ const router = new Router({
   routes: AllRoutes.routes
 })
 ```
+
+## 安装 babel-polyfill，用于转码 ES6 新增的 API，如 Promise
+
+- `npm i babel-polyfill --save-dev`
+
+- 在 main.js 的第一行引入 babel-polyfill `import 'babel-polyfill'`
+
+## 模块 export 与 import
+
+- 使用 `export default X` 导出模块，使用 `import X from 'X.js'` 导入
+ 
+- 使用 `export const A` / `export const B` 导出模块，使用 `import {A,B} from 'X.js'` 导入
+
+## 使用 stylus
+
+```
+npm install stylus-loader --save-dev
+npm install stylus --save-dev
+```
+
+## Router 根路径 `/` 重定向到其它 Route
+
+```
+{
+  path: '/',
+  redirect: '/index'
+}
+```
+## 针对 IE 9 以下 IE 浏览器的处理
+
+```
+<!--[if lte IE 9]><script>window.location.href='../static/html/landing.html';</script><![endif]-->
+```
+
 
 
